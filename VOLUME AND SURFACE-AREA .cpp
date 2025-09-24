@@ -1,0 +1,22 @@
+//Simple C Program to find Volume and Surface-area
+/*
+Name:Alex Kimana Wanjiku 
+Reg No:CT100/G/26186/25
+Description: Volume and Surface-area#include<stdio.h>
+*/
+
+#include<stdio.h>
+#define pi 3.1428
+int main()
+{
+    float radius,height,volume,surfacearea;
+    printf("enter the radius of the cylinder:");
+    scanf("%f",& radius);
+    printf("enter the height of the cylinder:");
+    scanf("%f", & height);
+    volume=pi*radius*radius*height;
+    surfacearea=2*pi*radius*(radius+height);
+    printf("the volume of the cylinder is %f\n",volume);
+    printf("the surfacearea of the cylinder is %f\n",surfacearea);
+    return 0;
+}
