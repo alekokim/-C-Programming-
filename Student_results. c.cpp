@@ -1,0 +1,45 @@
+/*
+NAME: ALEX KIMANA WANJIKU 
+REG NO: CT100/G/26186/25
+Description: Program for displaying student results from binary file 
+*/
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Student {
+    char name[50];
+    int regNo;
+    float marks;
+};
+
+int main() {
+    FILE *file;
+    struct Student s;
+    int n, i;
+
+    file = fopen("results.dat", "wb"); 
+    if (file == NULL) {
+        printf("Error creating file!\n");
+        return 1;
+    }
+
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+    getchar(); 
+
+    for (i = 0; i < n; i++) {
+        printf("\nEnter name: ");
+        fgets(s.name, sizeof(s.name), stdin);
+        printf("Enter registration number: ");
+        scanf("%d", &s.regNo);
+        printf("Enter marks: ");
+        scanf("%f", &s.marks);
+        getchar();
+
+        fwrite(&s, sizeof(struct Student), 1, file);
+    }
+
+    fclose(file);
+    printf("\nAll student records saved successfully!\n");
+    return 0;
+}
